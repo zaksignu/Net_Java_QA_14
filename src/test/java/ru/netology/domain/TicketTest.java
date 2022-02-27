@@ -18,40 +18,40 @@ class TicketTest {
 
     @Test
     void getPrice() {
-//        int actual = tick1.getPrice();
-//        int excpected = 1500;
-//        assertEquals(excpected, actual);
+        int actual = tick1.getPrice();
+        int excpected = 1500;
+        assertEquals(excpected, actual);
     }
 
     @Test
     void compareToPositive() {
-//    int expected = 300;
-//    assertEquals(expected,tick1.compareTo(tick2));
+        int expected = 300;
+        assertEquals(expected, tick1.compareTo(tick2));
     }
 
     @Test
     void compareToNegative() {
-//        int expected = 0;
-//        assertEquals(expected,tick1.compareTo(tick3));
+        int expected = 0;
+        assertEquals(expected, tick1.compareTo(tick3));
     }
 
-//    @Test
-//    void departureMatchPositive() {
-//        assertTrue(tick1.departureMatch("CHI"));
-//    }
-//
-//    @Test
-//    void departureMatchNegative() {
-//        assertFalse(tick1.departureMatch("OTP"));
-//    }
-//
-//    @Test
-//    void arrivalMatchPositive() {
-//        assertTrue(tick1.arrivalMatch("ZIA"));
-//    }
-//
-//    @Test
-//    void arrivalMatchNegative() {
-//        assertFalse(tick1.arrivalMatch("CHE"));
-//    }
+    @Test
+    void departureMatchPositive() {
+        assertTrue(tick1.departureMatch("CHI"));
+    }
+
+    @Test
+    void departureMatchNegative() {
+        assertFalse(tick1.departureMatch("OTP"));
+    }
+
+    @Test
+    void arrivalMatchPositive() {
+        assertTrue(tick1.arrivalMatch("ZIA"));
+    }
+
+    @Test
+    void arrivalMatchNegative() {
+        assertFalse(tick1.arrivalMatch("CHE"));
+    }
 }

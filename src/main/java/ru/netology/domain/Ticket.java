@@ -29,7 +29,6 @@ public class Ticket implements Comparable<Ticket> {
     }
 
 
-
     @Override
     public int compareTo(Ticket o) {
         Ticket tick = (Ticket) o;

@@ -49,6 +49,7 @@ class ProductManagerTest {
         mng.add(tick16);
 
     }
+
     @Order(1)
     @Test
     void findAllPositive() {
@@ -65,8 +66,6 @@ class ProductManagerTest {
         assertArrayEquals(excpected, actual);
     }
 
-
-
     @Order(3)
     @Test
     void add() {
@@ -76,6 +75,7 @@ class ProductManagerTest {
         Ticket[] excpected = repository.showThings();
         assertArrayEquals(excpected, actual);
     }
+
     @Order(2)
     @Test
     void removeById() {
@@ -86,17 +86,19 @@ class ProductManagerTest {
         assertArrayEquals(excpected, actual);
 
     }
+
     @Order(7)
     @Test
     void orderResult() {
-        Ticket[] actual = { tick9,tick12,tick3,tick4,tick10,tick11,tick2,tick1,tick14,tick15,tick5,tick8,tick13,tick7,tick6,tick16};
+        Ticket[] actual = {tick9, tick12, tick3, tick4, tick10, tick11, tick2, tick1, tick14, tick15, tick5, tick8, tick13, tick7, tick6, tick16};
         Ticket[] excpected = mng.orderResult(repository.showThings());
         assertArrayEquals(excpected, actual);
     }
+
     @Order(6)
     @Test
     void orderResultWithPriceAsc() {
-        Ticket[] actual = { tick9,tick16,tick5,tick11,tick4,tick15,tick7,tick8,tick10,tick13,tick2,tick3,tick1,tick6,tick14,tick12};
+        Ticket[] actual = {tick9, tick16, tick5, tick11, tick4, tick15, tick7, tick8, tick10, tick13, tick2, tick3, tick1, tick6, tick14, tick12};
         Ticket[] excpected = mng.orderResultWithPrice(repository.showThings());
         assertArrayEquals(excpected, actual);
     }
@@ -106,6 +108,7 @@ class ProductManagerTest {
     void matcheArrival() {
         assertTrue(mng.matcheArrival(tick1, "ZIA"));
     }
+
     @Order(5)
     @Test
     void matcheDeparture() {

@@ -36,7 +36,7 @@ public class ProductManager {
         }
         orderResult(result);
         return orderResultWithPrice(result);
-   }
+    }
 
     public boolean matcheArrival(Ticket ticket, String search) {
         return ticket.arrivalMatch(search);
@@ -44,13 +44,13 @@ public class ProductManager {
     }
 
     public boolean matcheDeparture(Ticket ticket, String search) {
-       return ticket.departureMatch(search);
+        return ticket.departureMatch(search);
     }
 
 
     public Ticket[] orderResult(Ticket[] ticket) {
         Arrays.sort(ticket);
-       return ticket;
+        return ticket;
     }
 
     public Ticket[] orderResultWithPrice(Ticket[] ticket) {

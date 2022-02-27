@@ -21,19 +21,19 @@ class ProductRepositoryTest {
 
     @BeforeAll
     static void setUp() {
-
         mng.add(tick1);
         mng.add(tick2);
         mng.add(tick3);
-
     }
+
     @Order(1)
     @Test
     void showThings() {
-      Ticket[] actual = {tick1, tick2, tick3};
-      Ticket[] excpected = repository.showThings();
-      assertArrayEquals(excpected, actual);
-   }
+        Ticket[] actual = {tick1, tick2, tick3};
+        Ticket[] excpected = repository.showThings();
+        assertArrayEquals(excpected, actual);
+    }
+
     @Order(2)
     @Test
     void removeThing() {
@@ -42,10 +42,11 @@ class ProductRepositoryTest {
         Ticket[] excpected = repository.showThings();
         assertArrayEquals(excpected, actual);
     }
+
     @Order(3)
     @Test
     void addProduct() {
-      mng.add(tick4);
+        mng.add(tick4);
         Ticket[] actual = {tick1, tick2, tick4};
         Ticket[] excpected = repository.showThings();
         assertArrayEquals(excpected, actual);
