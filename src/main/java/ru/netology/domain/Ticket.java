@@ -24,6 +24,12 @@ public class Ticket implements Comparable<Ticket> {
         return price;
     }
 
+    public int getTravelTime() {
+        return travelTime;
+    }
+
+
+
     @Override
     public int compareTo(Ticket o) {
         Ticket tick = (Ticket) o;

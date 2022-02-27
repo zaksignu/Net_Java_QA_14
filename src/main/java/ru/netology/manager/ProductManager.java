@@ -1,6 +1,7 @@
 package ru.netology.manager;
 
 import ru.netology.domain.Ticket;
+import ru.netology.domain.TicketByPriceAscComparator;
 import ru.netology.repository.ProductRepository;
 
 import java.util.Arrays;
@@ -19,28 +20,23 @@ public class ProductManager {
     public void removeById(int id) {
         ticketManager.removeThing(id);
     }
-//
-//   public findAllWithComparator(String from, String to, Comparator<Ticket> comparator){
-//
-//    }
+
 
     public Ticket[] findAll(String departure, String arrival) {
         Ticket[] result = new Ticket[0];
         for (Ticket product : ticketManager.showThings()) {
-  //          Arrays.compare;
-//            if ((matcheDeparture(product, departure)) & (matcheArrival(product, arrival))) {
-//                int length = result.length;
-//                Ticket[] tmpsearch = new Ticket[length + 1];
-//                System.arraycopy(result, 0, tmpsearch, 0, result.length);
-//                int lastIndex = length;
-//                tmpsearch[lastIndex] = product;
-//                result = tmpsearch;
+            if ((matcheDeparture(product, departure)) & (matcheArrival(product, arrival))) {
+                int length = result.length;
+                Ticket[] tmpsearch = new Ticket[length + 1];
+                System.arraycopy(result, 0, tmpsearch, 0, result.length);
+                tmpsearch[length] = product;
+                result = tmpsearch;
             }
-        return null;
+
         }
-      //  orderResult(result);
-        //return orderResult(result);
-   //}
+        orderResult(result);
+        return orderResultWithPrice(result);
+   }
 
     public boolean matcheArrival(Ticket ticket, String search) {
         return ticket.arrivalMatch(search);
@@ -53,21 +49,12 @@ public class ProductManager {
 
 
     public Ticket[] orderResult(Ticket[] ticket) {
-//        Ticket tempOne;
-//        int neatOrder = 1;
-//        int length = ticket.length - 1;
-//        while (neatOrder != 0) {
-//            neatOrder = 0;
-//            for (int i = 0; i <= (length - 1); i++) {
-//                if (ticket[i].compareTo(ticket[i + 1]) < 0) {
-//                    tempOne = ticket[i];
-//                    ticket[i] = ticket[i + 1];
-//                    ticket[i + 1] = tempOne;
-//                    neatOrder++;
-//                }
-//            }
-//        }
+        Arrays.sort(ticket);
        return ticket;
     }
 
+    public Ticket[] orderResultWithPrice(Ticket[] ticket) {
+        Arrays.sort(ticket, new TicketByPriceAscComparator());
+        return ticket;
+    }
 }

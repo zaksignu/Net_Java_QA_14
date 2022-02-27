@@ -16,7 +16,7 @@ public class TicketByPriceAscComparator implements Comparator<Ticket> {
 //        this.travelTime = travelTime;
 //    }
     public int compare(Ticket o1, Ticket o2) {
-        return o2.getPrice() - o1.getPrice();
+        return o2.getTravelTime() - o1.getTravelTime();
     }
 
 }
